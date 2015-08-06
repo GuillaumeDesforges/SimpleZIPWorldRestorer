@@ -1,0 +1,43 @@
+name: SimpleZIPWorldRestorer
+version: 2.0.1
+main: fr.arsleust.simplezipworldrestorer.Plugin
+author: Arsleust
+description: The simplest way to backup your worlds and restore them
+commands:
+  worldloader:
+    usage: /<command> world name (spaces allowed)
+    description: Load a world from disk
+    aliases: [wl, loadworld]
+    permission: simplezipworldrestorer.load
+  worldsaver:
+    usage: /<command> world name (spaces allowed)
+    description: Save world to disk
+    aliases: [ws, saveworld]
+    permission: simplezipworldrestorer.save
+  worldzipper:
+    usage: /<command> world name (spaces allowed)
+    description: Zip the world folder to a backup file. You may need to save the world first
+    aliases: [wz, zipworld]
+    permission: simplezipworldrestorer.zip
+  worldrestorer:
+    usage: /<command> world name (spaces allowed)
+    description: Restore a world from backup file
+    aliases: [wr, restoreworld]
+    permission: simplezipworldrestorer.restore
+permissions:
+  simplezipworldrestorer.*:
+    description: Gives access to all SimpleZIPWorldRestorer commands
+    children:
+      simplezipworldrestorer.load: true
+      simplezipworldrestorer.save: true
+      simplezipworldrestorer.zip: true
+      simplezipworldrestorer.restore: true
+    default: op
+  simplezipworldrestorer.load:
+    description: Allows you to load worlds
+  simplezipworldrestorer.save:
+    description: Allows you to save worlds
+  simplezipworldrestorer.zip:
+    description: Allows you to zip worlds
+  simplezipworldrestorer.restore:
+    description: Allows you to restore worlds
